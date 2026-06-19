@@ -8,20 +8,20 @@ function Course() {
   const [courses, setCourses] = useState([]);
 
   const fetchCourses = async () => {
-    const res = await axios.get("http://localhost:8081/courses");
+    const res = await axios.get("https://student-management-backend-75hy.onrender.com/courses");
     setCourses(res.data);
   };
 
   const addCourse = async () => {
     if (!courseName.trim()) return;
-    await axios.post("http://localhost:8081/course", { courseName });
+    await axios.post("https://student-management-backend-75hy.onrender.com/course", { courseName });
     setCourseName("");
     fetchCourses();
   };
 
   const deleteCourse = async (id) => {
     if (window.confirm("Delete this course?")) {
-      await axios.delete(`http://localhost:8081/course/${id}`);
+      await axios.delete(`https://student-management-backend-75hy.onrender.com/course/${id}`);
       fetchCourses();
     }
   };
@@ -32,7 +32,7 @@ function Course() {
       return;
     }
     const res = await axios.get(
-      `http://localhost:8081/course/search?name=${name}`
+      `https://student-management-backend-75hy.onrender.com/course/search?name=${name}`
     );
     setCourses(res.data);
   };

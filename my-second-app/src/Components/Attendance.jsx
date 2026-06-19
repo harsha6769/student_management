@@ -26,7 +26,7 @@ function Attendance() {
 
   const filterAttendance = async () => {
     const res = await axios.get(
-      `http://localhost:8081/attendance/filter?days=${filterDays}`
+      `https://student-management-backend-75hy.onrender.com/attendance/filter?days=${filterDays}`
     );
     setAttendanceList(res.data);
   };

@@ -20,7 +20,7 @@ function Subject() {
 
   const deleteSubject = async (id) => {
     if (window.confirm("Delete this subject?")) {
-      await axios.delete(`http://localhost:8081/subject/${id}`);
+      await axios.delete(`https://student-management-backend-75hy.onrender.com/subject/${id}`);
       fetchSubjects();
     }
   };
@@ -31,7 +31,7 @@ function Subject() {
       return;
     }
     const res = await axios.get(
-      `http://localhost:8081/subject/search?name=${name}`
+      `https://student-management-backend-75hy.onrender.com/subject/search?name=${name}`
     );
     setSubjects(res.data);
   };

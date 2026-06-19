@@ -22,14 +22,14 @@ function GPA() {
 
   const searchByGpa = async () => {
     const res = await axios.get(
-      `http://localhost:8081/gpa/search?value=${gpa}`
+      `https://student-management-backend-75hy.onrender.com/gpa/search?value=${gpa}`
     );
     setGpas(res.data);
   };
 
   const filterRange = async () => {
     const res = await axios.get(
-      `http://localhost:8081/gpa/range?min=${min}&max=${max}`
+      `https://student-management-backend-75hy.onrender.com/gpa/range?min=${min}&max=${max}`
     );
     setGpas(res.data);
   };
